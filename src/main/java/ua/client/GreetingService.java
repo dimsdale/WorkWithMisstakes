@@ -15,7 +15,9 @@ public interface GreetingService extends RemoteService {
 
     public List<User> getAllUsers();
 
-    public void AuthorizedUser(String name, String password);
+    public User authorizedUser(String login, String password);
+
+
 
     public static class App {
         private static final GreetingServiceAsync ourInstance = (GreetingServiceAsync) GWT.create(GreetingService.class);

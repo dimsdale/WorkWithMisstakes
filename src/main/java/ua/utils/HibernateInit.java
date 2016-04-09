@@ -9,7 +9,7 @@ public class HibernateInit {
 
     public HibernateInit() {
         Configuration configuration = new Configuration();
-        sessionFactory = configuration.configure("ua/hibernate.cfg.xml").buildSessionFactory();
+        sessionFactory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
     }
 
     public SessionFactory getSessionFactory() {

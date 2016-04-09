@@ -41,19 +41,20 @@ public class Auth extends Composite {
         signin.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent clickEvent) {
-               GreetingService.App.getInstance().AuthorizedUser(login.getText(), password.getText(), new AsyncCallback<Void>() {
+               GreetingService.App.getInstance().authorizedUser(login.getText(), password.getText(), new AsyncCallback<User>() {
                    @Override
                    public void onFailure(Throwable throwable) {
-                       Window.alert(throwable.toString());
-                       logger.info(throwable.toString());
+                        logger.info(throwable.toString());
                    }
 
                    @Override
-                   public void onSuccess(Void aVoid) {
-                       logger.info("Greeting!!!");
-
+                   public void onSuccess(User user) {
+                      if (user != null){
+                          RootPanel.get("body").clear();
+                          RootPanel.get("body").add(new Greeting(user.getName()));
+                      }
                    }
-               });
+                   });
             }
         });
     }

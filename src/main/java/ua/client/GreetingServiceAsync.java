@@ -12,7 +12,8 @@ import java.util.List;
 public interface GreetingServiceAsync {
     void getAllUsers(AsyncCallback<List<User>> async);
 
-    void AuthorizedUser(String name, String password, AsyncCallback<Void> async);
+
+    void authorizedUser(String login, String password, AsyncCallback<User> async);
 
 
 }
