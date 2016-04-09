@@ -1,0 +1,9 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <g:HTMLPanel>
+        <table align="center">
+            <h2><p/><g:Label ui:field="greeting"/></h2>
+            <h2><p/><g:Hyperlink ui:field="hyperlink"/> </h2>
+        </table>
+    </g:HTMLPanel>
+</ui:UiBinder>

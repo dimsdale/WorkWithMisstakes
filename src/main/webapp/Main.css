@@ -1,0 +1,28 @@
+body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: small;
+  margin: 8px;
+}
+
+div img {
+  max-width: 20%;
+  height: auto;
+  align-content: left;
+
+}
+footer {
+  position: absolute;
+  width: 100%;
+  height: 2%;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+div {
+  width: 100%;
+  text-align: center;}
+
+

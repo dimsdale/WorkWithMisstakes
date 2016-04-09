@@ -1,0 +1,21 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+    <ui:with field="labels" type="ua.client.i18n.Labels"/>
+    <g:HTMLPanel>
+        <table align="center" >
+
+            <tr>
+                <td><ui:text from='{labels.Login}' /></td>
+                <td><g:TextBox ui:field="login" /></td>
+            </tr>
+            <tr>
+                <td><ui:text from='{labels.Password}' /></td>
+                <td><g:PasswordTextBox ui:field="password" /></td>
+            </tr>
+
+            <tr>
+                <td><g:Button ui:field="signin" text="{labels.Signin}" /></td>
+            </tr>
+        </table>
+    </g:HTMLPanel>
+</ui:UiBinder>
