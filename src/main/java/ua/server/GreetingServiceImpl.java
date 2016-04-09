@@ -47,7 +47,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
     } return null;
     }
 
-    private   String hashPasswordAndSault(String name){
+    public String hashPasswordAndSault(String name){
         name += "sault";
         MessageDigest messageDigest = null;
         byte[] digest = new byte[0];

@@ -11,9 +11,7 @@ import ua.client.i18n.Labels;
 import java.util.Date;
 import java.util.logging.Logger;
 
-/**
- * Created by Surger on 09.04.2016.
- */
+
 public class Greeting extends Composite {
 
     interface GreetingUiBinder extends UiBinder<HTMLPanel, Greeting> {

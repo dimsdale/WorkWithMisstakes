@@ -38,24 +38,32 @@ public class Auth extends Composite {
         logger.info("Initial widget authorization.....");
         initWidget(ourUiBinder.createAndBindUi(this));
         logger.info("Initial finished");
-        signin.addClickHandler(new ClickHandler() {
+        addClickReaction(signin);
+    }
+    public void addClickReaction(Button button){
+        button.addClickHandler(new ClickHandler() {
             @Override
             public void onClick(ClickEvent clickEvent) {
-               GreetingService.App.getInstance().authorizedUser(login.getText(), password.getText(), new AsyncCallback<User>() {
-                   @Override
-                   public void onFailure(Throwable throwable) {
+                GreetingService.App.getInstance().authorizedUser(login.getText(), password.getText(), new AsyncCallback<User>() {
+                    @Override
+                    public void onFailure(Throwable throwable) {
                         logger.info(throwable.toString());
-                   }
+                        Window.alert("Something wrong with authorization...");
+                    }
 
-                   @Override
-                   public void onSuccess(User user) {
-                      if (user != null){
-                          RootPanel.get("body").clear();
-                          RootPanel.get("body").add(new Greeting(user.getName()));
-                      }
-                   }
-                   });
+                    @Override
+                    public void onSuccess(User user) {
+                        initialGreeting(user);
+                    }
+                });
             }
         });
+    }
+
+    public void initialGreeting (User user){
+        if (user != null){
+            RootPanel.get("body").clear();
+            RootPanel.get("body").add(new Greeting(user.getName()));
+        } else Window.alert("User not found");
     }
 }
