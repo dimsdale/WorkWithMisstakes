@@ -7,9 +7,7 @@ import ua.client.model.User;
 
 import java.util.List;
 
-/**
- * Created by Surger on 09.04.2016.
- */
+
 @RemoteServiceRelativePath("GreetingService")
 public interface GreetingService extends RemoteService {
 

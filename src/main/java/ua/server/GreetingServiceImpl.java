@@ -15,9 +15,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 import java.util.logging.Logger;
 
-/**
- * Created by Surger on 09.04.2016.
- */
+
 public class GreetingServiceImpl extends RemoteServiceServlet implements GreetingService {
 
     HibernateInit hibernateInit = new HibernateInit();
@@ -31,6 +29,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
         Criteria criteria = session.createCriteria(User.class);
         List<User> result = criteria.list();
         session.close();
+        hibernateInit.getSessionFactory().close();
         return result;
     }
 
