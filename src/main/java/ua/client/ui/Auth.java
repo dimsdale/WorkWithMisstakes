@@ -60,7 +60,7 @@ public class Auth extends Composite {
         });
     }
 
-    public void initialGreeting (User user){
+    private  void initialGreeting (User user){
         if (user != null){
             RootPanel.get("body").clear();
             RootPanel.get("body").add(new Greeting(user.getName()));

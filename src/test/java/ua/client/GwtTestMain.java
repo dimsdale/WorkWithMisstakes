@@ -6,6 +6,7 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.rpc.ServiceDefTarget;
 import ua.client.model.User;
 import ua.client.ui.Greeting;
+import ua.server.GreetingServiceImpl;
 
 import java.util.Date;
 import java.util.List;
