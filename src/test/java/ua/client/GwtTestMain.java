@@ -59,8 +59,7 @@ public class GwtTestMain extends GWTTestCase {
 
   public void testGreetingForNotNullableGreetingMessage(){
     Greeting greeting = new Greeting(null);
-    Date date = new Date();
-    assertNotNull(greeting.getWelcomeMessage(date));
+    assertNotNull(greeting.getWelcomeMessage());
   }
 
 }
