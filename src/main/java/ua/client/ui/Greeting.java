@@ -17,8 +17,6 @@ public class Greeting extends Composite {
     interface GreetingUiBinder extends UiBinder<HTMLPanel, Greeting> {
     }
 
-    private Date date = new Date();
-
     private Labels labels = GWT.<Labels>create(Labels.class);
 
     public static final Logger logger = Logger.getLogger(Greeting.class.getName());
@@ -33,7 +31,7 @@ public class Greeting extends Composite {
     public Greeting(String name) {
         logger.info("Initial Greeting....");
         initWidget(ourUiBinder.createAndBindUi(this));
-        greeting.setText(getWelcomeMessage(date) + " " + name);
+        greeting.setText(getWelcomeMessage() + " " + name);
         initialAnchor(hyperlink);
 
     }
@@ -51,8 +49,9 @@ public class Greeting extends Composite {
     }
 
 
-    public String getWelcomeMessage(Date date){
+    public String getWelcomeMessage(){
         logger.info("Getting time user...");
+        Date date = new Date();
         int hour = date.getHours();
         logger.info("Initialize welcome message");
         if (hour >= 23 || hour >= 0 && hour <= 5){

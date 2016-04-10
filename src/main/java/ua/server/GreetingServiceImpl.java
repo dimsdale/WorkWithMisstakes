@@ -36,8 +36,8 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
     @Override
     public User authorizedUser(String login, String password) {
         List<User> result = getAllUsers();
+        logger.info("Comparing the login and password");
         for (User user: result) {
-            logger.info("Comparing the login and password");
             if (login.equals(user.getLogin()) && hashPasswordAndSault(password).equals(user.getPassword())){
                 logger.info("User find....");
         return user;
